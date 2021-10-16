@@ -106,11 +106,11 @@ function gameOverError() {
 
 //fuction to animate button when pressed
 function buttonAnimation(clickedButtonId) {
-    // $("#" + clickedButtonId).addClass("pressed");
+    $("#" + clickedButtonId).addClass("pressed");
 
-    // setTimeout(function () {
-    //     $("#" + clickedButtonId).removeClass("pressed");
-    // }, 100);
+    setTimeout(function () {
+        $("#" + clickedButtonId).removeClass("pressed");
+    }, 100);
 
 }
 
