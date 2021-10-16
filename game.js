@@ -118,31 +118,31 @@ function buttonAnimation(clickedButtonId) {
 
 //function to play music based on key pressed/ or button clicked
 function playMusic(key) {
-    // switch (key) {
-    //     case "green":
-    //         var greenMusic = new Audio("sounds/green.mp3");
-    //         greenMusic.play();
-    //         break;
-    //     case "red":
-    //         var redMusic = new Audio("sounds/red.mp3");
-    //         redMusic.play();
-    //         break;
-    //     case "yellow":
-    //         var yellowMusic = new Audio("sounds/yellow.mp3");
-    //         yellowMusic.play();
-    //         break;
-    //     case "blue":
-    //         var blueMusic = new Audio("sounds/blue.mp3");
-    //         blueMusic.play();
-    //         break;
-    //     case "error":
-    //         var errorMusic = new Audio("sounds/wrong.mp3");
-    //         errorMusic.play();
-    //         break;
+    switch (key) {
+        case "green":
+            var greenMusic = new Audio("sounds/green.mp3");
+            greenMusic.play();
+            break;
+        case "red":
+            var redMusic = new Audio("sounds/red.mp3");
+            redMusic.play();
+            break;
+        case "yellow":
+            var yellowMusic = new Audio("sounds/yellow.mp3");
+            yellowMusic.play();
+            break;
+        case "blue":
+            var blueMusic = new Audio("sounds/blue.mp3");
+            blueMusic.play();
+            break;
+        case "error":
+            var errorMusic = new Audio("sounds/wrong.mp3");
+            errorMusic.play();
+            break;
 
-    //     default:
-    //         console.log(key);
-    // }
+        default:
+            console.log(key);
+    }
 }
 
 
