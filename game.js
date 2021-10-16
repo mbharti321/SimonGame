@@ -75,6 +75,7 @@ $(".btn").click(function () {
     verifyUserResponce(clickedButtonId);
 });
 
+// funtion to check if user clicked the corresponding sequenceUnit
 function verifyUserResponce(clickedButtonId) {
     if (!gameStarted) {
         // if game is not started
