@@ -41,6 +41,7 @@ function generateSequenceUnit() {
     // console.log(sequence);
 
     buttonAnimation(newSequenceUnit);
+    playMusic(newSequenceUnit);
 
     // update game level
     gameLevel += 1;
@@ -91,7 +92,7 @@ function gameOverError() {
     playMusic("error");
 
     $("body").addClass("game-over");
-    $("h1").text("Press A Key to Start");
+    $("h1").text("Game over, Press any Key to restart");
 
     //resetting veriables to default
     sequence = [];
