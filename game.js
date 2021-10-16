@@ -31,10 +31,9 @@ function generateSequenceUnit() {
     // push newly button color based on newly
     // generated random number
     sequence.push(newSequenceUnit);
-    // console.log(newSequenceUnit);
-    // console.log(sequence);
-
-    buttonAnimation(newSequenceUnit);
+    
+    // animate selected button
+    $("#" + newSequenceUnit).fadeOut(100).fadeIn(100);
     playMusic(newSequenceUnit);
 
     // update game level
@@ -98,11 +97,10 @@ function gameOverError() {
 
 //fuction to animate button when pressed
 function buttonAnimation(clickedButtonId) {
-    $("#" + clickedButtonId).fadeOut(100).fadeIn(100);
-    // $("#" + clickedButtonId).addClass("pressed");
-    // setTimeout(function () {
-    //     $("#" + clickedButtonId).removeClass("pressed");
-    // }, 100);
+    $("#" + clickedButtonId).addClass("pressed");
+    setTimeout(function () {
+        $("#" + clickedButtonId).removeClass("pressed");
+    }, 100);
 
 }
 
