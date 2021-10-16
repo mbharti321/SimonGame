@@ -24,13 +24,17 @@ body {
   height: 10rem;
   width: 10rem;
   border: 10px solid black;
+  cursor: pointer;
   border-radius: 20%;
 }
 
 #startBtn{
   margin: 1rem;
-  padding: 10px 30px;
+  padding: 15px 50px;
   font-family: 'Press Start 2P', cursive;
+  /* border-radius: 20%; */
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .game-over {
