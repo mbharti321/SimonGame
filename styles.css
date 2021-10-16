@@ -27,6 +27,12 @@ body {
   border-radius: 20%;
 }
 
+#startBtn{
+  margin: 1rem;
+  padding: 10px 30px;
+  font-family: 'Press Start 2P', cursive;
+}
+
 .game-over {
   background-color: red;
   opacity: 0.8;

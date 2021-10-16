@@ -6,10 +6,19 @@ var currentSequence = [];
 // listen to key press
 $(document).on("keypress", function () {
     if (!gameStarted) {
-        generateSequenceUnit();
-        gameStarted = true;
+        startGame();
     }
 });
+// onclick on start button
+$("#startBtn").click(function () {
+    resetGame();
+    startGame();
+});
+
+function startGame() {
+    generateSequenceUnit();
+    gameStarted = true;
+}
 
 // function to generate new sequenceUnit and add that in existing sequence 
 function generateSequenceUnit() {
@@ -76,7 +85,7 @@ function verifyUserResponce(clickedButtonId) {
     } else if (clickedButtonId === currentSequence[0]) {
         // if the clicked button matches the sequence
         currentSequence.shift();
-        
+
         if (currentSequence.length === 0) {
             // if the clicked button was the last element in current sequence,
             // next level, Call generateSequenceUnit(),
@@ -94,11 +103,7 @@ function gameOverError() {
     $("body").addClass("game-over");
     $("h1").text("Game over, Press any Key to restart");
 
-    //resetting veriables to default
-    sequence = [];
-    gameLevel = 0;
-    gameStarted = false;
-    currentSequence = [];
+    resetGame();
 
     setTimeout(function () {
         $("body").removeClass("game-over");
@@ -152,4 +157,13 @@ function delay(delayDuration, generateSequenceUnit) {
     setTimeout(function () {
         generateSequenceUnit();
     }, delayDuration);
+}
+
+// Reset Game
+function resetGame() {
+    //resetting veriables to default
+    sequence = [];
+    gameLevel = 0;
+    gameStarted = false;
+    currentSequence = [];
 }
