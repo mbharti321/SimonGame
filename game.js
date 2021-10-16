@@ -1,3 +1,4 @@
+buttonColors = ["green", "red", "yellow", "blue"];
 var sequence = [];
 var gameLevel = 0;
 var gameStarted = false;
@@ -23,26 +24,10 @@ function startGame() {
 // function to generate new sequenceUnit and add that in existing sequence 
 function generateSequenceUnit() {
     var randomNum = Math.floor(Math.random() * 4);
-    var newSequenceUnit = "";
-
     // push newly button color based on newly
     // generated random number
-    switch (randomNum) {
-        case 0:
-            newSequenceUnit = "green";
-            break;
-        case 1:
-            newSequenceUnit = "red";
-            break;
-        case 2:
-            newSequenceUnit = "yellow";
-            break;
-        case 3:
-            newSequenceUnit = "blue";
-            break;
-        default:
-            console.log(randomNum)
-    }
+    var newSequenceUnit = buttonColors[randomNum];
+
     // push newly button color based on newly
     // generated random number
     sequence.push(newSequenceUnit);
@@ -99,7 +84,7 @@ function verifyUserResponce(clickedButtonId) {
 
 // wrong input funtion
 function gameOverError() {
-    playMusic("error");
+    playMusic("wrong");
 
     $("body").addClass("game-over");
     $("h1").text("Game over, Press any Key to restart");
@@ -113,43 +98,20 @@ function gameOverError() {
 
 //fuction to animate button when pressed
 function buttonAnimation(clickedButtonId) {
-    $("#" + clickedButtonId).addClass("pressed");
-
-    setTimeout(function () {
-        $("#" + clickedButtonId).removeClass("pressed");
-    }, 100);
+    $("#" + clickedButtonId).fadeOut(100).fadeIn(100);
+    // $("#" + clickedButtonId).addClass("pressed");
+    // setTimeout(function () {
+    //     $("#" + clickedButtonId).removeClass("pressed");
+    // }, 100);
 
 }
 
 
 
 //function to play music based on key pressed/ or button clicked
-function playMusic(key) {
-    switch (key) {
-        case "green":
-            var greenMusic = new Audio("sounds/green.mp3");
-            greenMusic.play();
-            break;
-        case "red":
-            var redMusic = new Audio("sounds/red.mp3");
-            redMusic.play();
-            break;
-        case "yellow":
-            var yellowMusic = new Audio("sounds/yellow.mp3");
-            yellowMusic.play();
-            break;
-        case "blue":
-            var blueMusic = new Audio("sounds/blue.mp3");
-            blueMusic.play();
-            break;
-        case "error":
-            var errorMusic = new Audio("sounds/wrong.mp3");
-            errorMusic.play();
-            break;
-
-        default:
-            console.log(key);
-    }
+function playMusic(name) {
+    var audio = new Audio("sounds/" + name + ".mp3");
+    audio.play();
 }
 
 
